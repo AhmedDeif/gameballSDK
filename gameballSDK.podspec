@@ -8,7 +8,7 @@ s.summary = "gameball SDK pod."
 s.requires_arc = true
 
 # 2
-s.version = "0.1.0"
+s.version = "0.1.1"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE" }
@@ -20,7 +20,7 @@ s.author = { "Ahmed Abodeif" => "ahmed.adel.abodeif@gmail.com" }
 s.homepage = "https://github.com/AhmedDeif/gameballSDK"
 
 # 6 - Replace this URL with your own Git URL from "Quick Setup"
-s.source = { :git => "https://github.com/AhmedDeif/gameballSDK", 
+s.source = { :git => "https://github.com/AhmedDeif/gameballSDK.git", 
              :tag => "#{s.version}" }
 
 # 7
