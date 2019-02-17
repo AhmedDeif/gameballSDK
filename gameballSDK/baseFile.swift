@@ -7,8 +7,21 @@
 //
 
 import UIKit
+//import FirebaseCore
 
 public class baseFile: NSObject {
+    
+    public static func testPrint() {
+        print("=======================")
+    }
+    
+    
+    public static func firebaseConfig() {
+        print("=======================")
+        print("=======================")
+        print("=======================")
+//        FirebaseApp.configure()
+    }
     
     public static func testFunc() {
 //        print("SDK works")

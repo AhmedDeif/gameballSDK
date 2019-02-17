@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4253A8AE2217597400EDD75E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4253A8AD2217597400EDD75E /* GoogleService-Info.plist */; };
 		42862C86221728BB00A654D5 /* gameballSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 42862C84221728BB00A654D5 /* gameballSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42862CD022172A8800A654D5 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42862C9E22172A8700A654D5 /* ProgressView.swift */; };
 		42862CD122172A8800A654D5 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42862CA022172A8700A654D5 /* ProfileHeaderView.swift */; };
@@ -47,12 +48,12 @@
 		42862CF422172A8800A654D5 /* ChallengesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42862CCD22172A8800A654D5 /* ChallengesViewModel.swift */; };
 		42862CF522172A8800A654D5 /* PlayerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42862CCE22172A8800A654D5 /* PlayerDetailsViewModel.swift */; };
 		42862CF622172A8800A654D5 /* ClientBotSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42862CCF22172A8800A654D5 /* ClientBotSettingsViewModel.swift */; };
-		C887DEB0EB2D70C921C0E749 /* libPods-gameballSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1632B56EB32F942D6865215B /* libPods-gameballSDK.a */; };
+		CCF825CE516AABD09FF7853D /* libPods-gameballSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C72D83171F9C4C354178C6 /* libPods-gameballSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1632B56EB32F942D6865215B /* libPods-gameballSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gameballSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		244C8BDB233F270C052A1D82 /* Pods-gameballSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gameballSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gameballSDK/Pods-gameballSDK.debug.xcconfig"; sourceTree = "<group>"; };
+		4253A8AD2217597400EDD75E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		42862C81221728BB00A654D5 /* gameballSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = gameballSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42862C84221728BB00A654D5 /* gameballSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gameballSDK.h; sourceTree = "<group>"; };
 		42862C85221728BB00A654D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 		42862CCE22172A8800A654D5 /* PlayerDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewModel.swift; sourceTree = "<group>"; };
 		42862CCF22172A8800A654D5 /* ClientBotSettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientBotSettingsViewModel.swift; sourceTree = "<group>"; };
 		A093C67D3592E8FBAC38A31B /* Pods-gameballSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gameballSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-gameballSDK/Pods-gameballSDK.release.xcconfig"; sourceTree = "<group>"; };
+		B1C72D83171F9C4C354178C6 /* libPods-gameballSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gameballSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C887DEB0EB2D70C921C0E749 /* libPods-gameballSDK.a in Frameworks */,
+				CCF825CE516AABD09FF7853D /* libPods-gameballSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +115,7 @@
 		0A6CB463C275734381668ABD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1632B56EB32F942D6865215B /* libPods-gameballSDK.a */,
+				B1C72D83171F9C4C354178C6 /* libPods-gameballSDK.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -139,6 +141,7 @@
 		42862C83221728BB00A654D5 /* gameballSDK */ = {
 			isa = PBXGroup;
 			children = (
+				4253A8AD2217597400EDD75E /* GoogleService-Info.plist */,
 				42862CB122172A8700A654D5 /* baseFile.swift */,
 				42862CB222172A8700A654D5 /* Constants.swift */,
 				42862CB322172A8700A654D5 /* Models */,
@@ -361,6 +364,7 @@
 			files = (
 				42862CD722172A8800A654D5 /* GameballViewController.xib in Resources */,
 				42862CEC22172A8800A654D5 /* firstView.xib in Resources */,
+				4253A8AE2217597400EDD75E /* GoogleService-Info.plist in Resources */,
 				42862CD422172A8800A654D5 /* LeaderboardViewController.xib in Resources */,
 				42862CD222172A8800A654D5 /* ProfileHeaderView.xib in Resources */,
 			);

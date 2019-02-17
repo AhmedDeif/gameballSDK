@@ -10,7 +10,7 @@ import Foundation
 
 typealias JSON = [String: Any]
 
-class NetworkManager:NSObject {
+public class NetworkManager:NSObject {
     
     let urlSession: URLSession
     let baseURL: String

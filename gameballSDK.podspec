@@ -8,7 +8,7 @@ s.summary = "gameball SDK pod."
 s.requires_arc = true
 
 # 2
-s.version = "0.1.4"
+s.version = "0.1.5"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE" }
@@ -23,12 +23,17 @@ s.homepage = "https://github.com/AhmedDeif/gameballSDK"
 s.source = { :git => "https://github.com/AhmedDeif/gameballSDK.git", 
              :tag => "#{s.version}" }
 
+#s.static_framework = true
 # 7
 s.framework = "UIKit"
-s.dependency 'Alamofire', '~> 4.7'
+#s.dependency 'Firebase'
+#s.dependency 'Firebase/Core'
 
 # 8
-s.source_files = "gameballSDK/**/*.{swift}"
+#s.source_files = "gameballSDK/*.{swift}"
+s.source_files = "gameballSDK/**/*.{swift}", "gameballSDK/GoogleService-Info.plist"
+#s.public_header_files = 'gameballSDK*.h'
+#s.exclude_files = "gameballSDK/info.plist"
 
 # 9
 s.resources = "gameballSDK/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"

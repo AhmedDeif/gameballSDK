@@ -229,7 +229,7 @@ class AchievementCell: UICollectionViewCell {
     
     func setChallengeImage(imagePath: String) {
         
-        self.achievementImageView.startShimmering()
+        self.contentView.startShimmering()
         NetworkManager.shared().loadImage(path: imagePath) { (myImage, error) in
             if let errorModel = error {
                 print(errorModel.description)
@@ -238,7 +238,7 @@ class AchievementCell: UICollectionViewCell {
             }
             if let result = myImage {
                 DispatchQueue.main.async {
-                    self.achievementImageView.stopShimmering()
+                    self.contentView.stopShimmering()
                     self.achievementImageView.image = result
                 }
             }

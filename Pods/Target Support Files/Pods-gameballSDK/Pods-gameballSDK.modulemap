@@ -1,4 +1,4 @@
-module Pods_gameballSDK [system] {
+framework module Pods_gameballSDK {
   umbrella header "Pods-gameballSDK-umbrella.h"
 
   export *
