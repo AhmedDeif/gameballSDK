@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameballViewController" customModule="gameball_SDK" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameballViewController" customModule="gameballSDK" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="zpH-7z-A5B" id="160-bx-iBh"/>
                 <outlet property="dropdownView" destination="qhV-4y-oer" id="Vid-LQ-JaY"/>
@@ -24,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCq-3a-WBp" customClass="ProfileHeaderView" customModule="gameball_SDK" customModuleProvider="target">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCq-3a-WBp" customClass="ProfileHeaderView" customModule="gameballSDK">
                     <rect key="frame" x="0.0" y="20" width="375" height="135"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -48,7 +48,7 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhV-4y-oer" customClass="DropdownView" customModule="gameball_SDK" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhV-4y-oer" customClass="DropdownView" customModule="gameballSDK">
                     <rect key="frame" x="17" y="162" width="341" height="30"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>

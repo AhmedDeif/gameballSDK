@@ -12,7 +12,7 @@ protocol DropdownViewDelegate {
     func dropdownView(_ dropdownView: DropdownView, didSelectItemAt index: Int, for string: String)
 }
 
-class DropdownView: UIView {
+public class DropdownView: UIView {
     
     var delegate: DropdownViewDelegate?
     
@@ -85,7 +85,7 @@ class DropdownView: UIView {
         choicesStackViewContainer.addSubview(choicesStackView)
     }
     
-    override func didMoveToSuperview() {
+    override public func didMoveToSuperview() {
         guard let superView = superview else { return }
         superView.addSubview(choicesStackViewContainer)
         

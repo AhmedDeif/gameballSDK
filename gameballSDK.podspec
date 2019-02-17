@@ -29,6 +29,15 @@ s.framework = "UIKit"
 #s.dependency 'Firebase'
 #s.dependency 'Firebase/Core'
 
+  s.static_framework = true
+  s.dependency 'Firebase'
+  s.pod_target_xcconfig = {
+
+"ENABLE_BITCODE" => 'NO',
+
+"OTHER_LDFLAGS" => '$(inherited) -framework "gameballSDK"'
+}
+
 # 8
 #s.source_files = "gameballSDK/*.{swift}"
 s.source_files = "gameballSDK/**/*.{swift}", "gameballSDK/GoogleService-Info.plist"
