@@ -12,13 +12,19 @@ public class GameballViewController: BaseViewController {
 
 
     private let cellIdentifier = "Cell"
-    private let coordinator: GameballCoordinator
     
     private let challengesViewModel = ChallengesViewModel()
     private let leaderboardViewModel = LeaderboardViewModel()
     
     private var challenges: [Challenge] = []
     
+    @IBOutlet weak var dismissButton: UIButton! {
+        didSet {
+            dismissButton.setTitle("Dismiss", for: .normal)
+            dismissButton.setTitleColor(.black, for: .normal)
+            dismissButton.addTarget(self, action: #selector(actionOfDismissButton), for: .touchUpInside)
+        }
+    }
     @IBOutlet private weak var profileHeaderView: ProfileHeaderView!
     @IBOutlet weak var dropdownView: DropdownView! {
         didSet {
@@ -39,12 +45,9 @@ public class GameballViewController: BaseViewController {
     }
     
     public init() {
-        coordinator = GameballCoordinator()
-//        let bund = Bundle.init(for: type(of: self))
-//        Bundle(for: GameballViewController.self)
+        baseFile.testFunc()
         super.init(nibName: "GameballViewController", bundle: Bundle.init(for: type(of: self)))
-        coordinator.delegate = self
-        fetchData()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -53,15 +56,17 @@ public class GameballViewController: BaseViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         dropdownView.choices = ["Achievements", "Leaderboard"]
+        fetchData()
         
     }
     
-    func fetchData() {
+    private func fetchData() {
         // ToDo: start animation
         challengesViewModel.getAllChallenges { (error) in
             if error != nil {
-                print(error?.description)
+                print(error?.description as Any)
             }
             else {
                 // ToDo: stop animation
@@ -72,6 +77,10 @@ public class GameballViewController: BaseViewController {
             }
         }
         
+    }
+    
+    @objc private func actionOfDismissButton() {
+        dismiss(animated: true, completion: nil)
     }
 
 }
@@ -89,8 +98,8 @@ extension GameballViewController: UICollectionViewDataSource, UICollectionViewDe
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! AchievementCell
         let challenge = self.challenges[indexPath.row]
-        cell.properties = (isAchieved: challenge.isUnlocked ?? false, isLocked: true) // will be changed to model
-        cell.setCellData(fromModel: challenge)
+       cell.challenge = challenge
+        cell.setChallengeImage(fromModel: challenge)
         return cell
     }
     
@@ -104,7 +113,8 @@ extension GameballViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        coordinator.didSelectAchievement()
+        let vc = AchievementDetailsViewController(challenge: challenges[indexPath.row])
+        push(vc, animated: true)
     }
     
 }
@@ -112,17 +122,14 @@ extension GameballViewController: UICollectionViewDataSource, UICollectionViewDe
 extension GameballViewController: DropdownViewDelegate {
     func dropdownView(_ dropdownView: DropdownView, didSelectItemAt index: Int, for string: String) {
         if index == 1 {
-            coordinator.showLeaderboard()
+            let vc = LeaderboardViewController()
+            push(vc, animated: true)
         }
     }
 }
 
 
-extension GameballViewController: GameballCoordinatorDelegate {
-    func profileDetailsReady() {
-        
-    }
-}
+
 
 
 
@@ -146,31 +153,19 @@ class AchievementCell: UICollectionViewCell {
         return iv
     }()
     
-    private let lockImageView: UIImageView = {
-        let iv = UIImageView(image: UIImage(named: "award"))
+    private let lockView: UIView = {
+        let iv = LockView(lockSize: .small)
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.clipsToBounds = true
         iv.contentMode = .scaleAspectFit
         return iv
     }()
     
-    private let challengeNameUILabel: UILabel = {
-        let label =  UILabel()
-//        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 40, height: 20))
-        label.textColor = Colors.appGray74
-        label.textAlignment = .center
-        label.text = "This is two lines name"
-        label.numberOfLines = 0
-        label.font = label.font.withSize(11)
-        
-        return label
-    }()
     
-    
-    var properties: (isAchieved: Bool, isLocked: Bool)? {
+    var challenge: Challenge? {
         didSet {
-            guard let properties = properties else { return }
-            setupAchievementAppearance(isAchieved: properties.isAchieved, isLocked: properties.isLocked)
+            guard let challange = challenge else { return }
+            setupAchievementAppearance(with: challange)
         }
     }
     
@@ -191,22 +186,24 @@ class AchievementCell: UICollectionViewCell {
     
     private func addSubViews() {
         contentView.addSubview(achievementImageView)
-        contentView.addSubview(lockImageView)
-        contentView.addSubview(challengeNameUILabel)
+        contentView.addSubview(lockView)
     }
     
     private func addConstraints() {
-        
-        achievementImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        achievementImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.8).isActive = true
-        achievementImageView.heightAnchor.constraint(equalTo: achievementImageView.widthAnchor, multiplier: 1).isActive = true
         achievementImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        challengeNameUILabel.frame = CGRect(x: 10, y: contentView.frame.height - 20, width: contentView.frame.width-10, height: 30)
-        challengeNameUILabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        challengeNameUILabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        achievementImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        achievementImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        achievementImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        
+        lockView.topAnchor.constraint(equalTo: achievementImageView.topAnchor).isActive = true
+        lockView.trailingAnchor.constraint(equalTo: achievementImageView.trailingAnchor).isActive = true
+        lockView.heightAnchor.constraint(equalToConstant: 21.4).isActive = true
+        lockView.widthAnchor.constraint(equalToConstant: 21.4).isActive = true
+        
     }
     
-    private func setupAchievementAppearance(isAchieved: Bool, isLocked: Bool) {
+    private func setupAchievementAppearance(with challenge: Challenge) {
+        let isAchieved = (challenge.achievedCount ?? 0) > 0
         
         if isAchieved {
             achievementImageView.alpha = 1
@@ -215,22 +212,15 @@ class AchievementCell: UICollectionViewCell {
             achievementImageView.alpha = 0.5
         }
         
-        lockImageView.isHidden = !isLocked
+        lockView.isHidden = challenge.isUnlocked ?? false
         
     }
     
-    
-    func setCellData(fromModel: Challenge) {
-        self.setChallengeName(name: fromModel.gameName ?? "Challenge")
+    func setChallengeImage(fromModel: Challenge) {
+        
         var path = fromModel.icon ?? "assets/images/bolt.png"
         path = "/" + path
-        self.setChallengeImage(imagePath: path)
-    }
-    
-    func setChallengeImage(imagePath: String) {
-        
-        self.contentView.startShimmering()
-        NetworkManager.shared().loadImage(path: imagePath) { (myImage, error) in
+        NetworkManager.shared().loadImage(path: path) { (myImage, error) in
             if let errorModel = error {
                 print(errorModel.description)
             }
@@ -238,7 +228,6 @@ class AchievementCell: UICollectionViewCell {
             }
             if let result = myImage {
                 DispatchQueue.main.async {
-                    self.contentView.stopShimmering()
                     self.achievementImageView.image = result
                 }
             }
@@ -246,9 +235,15 @@ class AchievementCell: UICollectionViewCell {
     }
     
     
-    func setChallengeName(name: String) {
-        challengeNameUILabel.text = name
-    }
-    
-    
 }
+
+
+
+
+
+
+
+
+
+
+

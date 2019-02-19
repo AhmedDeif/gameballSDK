@@ -8,7 +8,7 @@ s.summary = "gameball SDK pod."
 s.requires_arc = true
 
 # 2
-s.version = "0.1.5"
+s.version = "0.1.6"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE" }
@@ -27,10 +27,11 @@ s.source = { :git => "https://github.com/AhmedDeif/gameballSDK.git",
 # 7
 s.framework = "UIKit"
 #s.dependency 'Firebase'
-#s.dependency 'Firebase/Core'
+#
 
   s.static_framework = true
   s.dependency 'Firebase'
+s.dependency 'Firebase/Core'
   s.pod_target_xcconfig = {
 
 "ENABLE_BITCODE" => 'NO',
@@ -40,12 +41,12 @@ s.framework = "UIKit"
 
 # 8
 #s.source_files = "gameballSDK/*.{swift}"
-s.source_files = "gameballSDK/**/*.{swift}", "gameballSDK/GoogleService-Info.plist"
+s.source_files = "gameballSDK/**/*.{swift}"
 #s.public_header_files = 'gameballSDK*.h'
 #s.exclude_files = "gameballSDK/info.plist"
 
 # 9
-s.resources = "gameballSDK/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+s.resources = "gameballSDK/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}", "gameballSDK/GoogleService-InfoGameball.plist"
 
 # 10
 s.swift_version = "4.2"

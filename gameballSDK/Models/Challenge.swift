@@ -25,6 +25,35 @@ class Challenge: Codable {
     let achievedCount, achievedActionsCount, currentAmount: Int?
     let userMessage: String?
     
+    var status: ChallengeStatus {
+        
+        guard let isUnlocked = isUnlocked, let achievedCount = achievedCount else {
+            return .locked
+        }
+        if !isUnlocked {
+            return .locked
+        }
+        else if achievedCount > 0 {
+            return .achieved
+        }
+        else {
+            return .inProgress
+        }
+        
+        
+    }
+    
+    var statusDescription: String {
+        switch status {
+        case .locked:
+            return "Locked! You need to be on level “Level Name Here” to unlock this badge"
+        case .inProgress:
+            return "Keep going! Earn this badge and claim your prize "
+        case .achieved:
+            return "Achieved (1)"
+        }
+    }
+    
     enum CodingKeys: String, CodingKey {
         case gameName = "GameName"
         case challengeID = "ChallengeId"
@@ -46,4 +75,12 @@ class Challenge: Codable {
         case achievedActionsCount = "AchievedActionsCount"
         case currentAmount = "CurrentAmount"
         case userMessage = "UserMessage"
-    }}
+    }
+    
+}
+
+enum ChallengeStatus {
+    case locked
+    case inProgress
+    case achieved
+}

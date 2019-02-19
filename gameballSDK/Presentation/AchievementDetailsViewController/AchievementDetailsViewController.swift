@@ -20,7 +20,7 @@ class AchievementDetailsViewController: BaseViewController {
     }()
     
     private let curvedView: UIView = {
-        let view = DemoView(color: Colors.appGray239)
+        let view = CurvedView(color: Colors.appGray239)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -40,13 +40,21 @@ class AchievementDetailsViewController: BaseViewController {
         return imageView
     }()
     
+    private let lockView: UIView = {
+        let iv = LockView(lockSize: .large)
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.clipsToBounds = true
+        iv.contentMode = .scaleAspectFit
+        iv.isHidden = true
+        return iv
+    }()
+    
     private let achievementTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = Colors.appGray74
         label.font = Fonts.appFont20Bold
         label.textAlignment = .center
-        label.text = "Electronics coin"
         label.numberOfLines = 0
         return label
     }()
@@ -57,7 +65,6 @@ class AchievementDetailsViewController: BaseViewController {
         label.textColor = Colors.appGray130
         label.font = Fonts.appFont16Regular
         label.textAlignment = .center
-        label.text = "This is the description of the challenge"
         label.numberOfLines = 0
         return label
     }()
@@ -80,12 +87,26 @@ class AchievementDetailsViewController: BaseViewController {
         return label
     }()
     
+    let challenge: Challenge
+    
+    init(challenge: Challenge) {
+        self.challenge = challenge
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         view.clipsToBounds = true
         addSubViews()
         addConstraints()
+        setupProperties(with: challenge)
+        
     }
     
     
@@ -94,6 +115,7 @@ class AchievementDetailsViewController: BaseViewController {
         topContainerView.addSubview(curvedView)
         view.addSubview(backButton)
         topContainerView.addSubview(achievementImageView)
+        topContainerView.addSubview(lockView)
         topContainerView.addSubview(achievementTitleLabel)
         topContainerView.addSubview(achievementDescriptionLabel)
         view.addSubview(achievementStatusImageView)
@@ -121,6 +143,12 @@ class AchievementDetailsViewController: BaseViewController {
         achievementImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         achievementImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
+        lockView.topAnchor.constraint(equalTo: achievementImageView.topAnchor).isActive = true
+        lockView.trailingAnchor.constraint(equalTo: achievementImageView.trailingAnchor).isActive = true
+        lockView.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        lockView.widthAnchor.constraint(equalToConstant: 32).isActive = true
+        
+        
         achievementTitleLabel.topAnchor.constraint(equalTo: achievementImageView.bottomAnchor, constant: 10).isActive = true
         achievementTitleLabel.leadingAnchor.constraint(equalTo: topContainerView.leadingAnchor, constant: 30).isActive = true
         achievementTitleLabel.trailingAnchor.constraint(equalTo: topContainerView.trailingAnchor, constant: -30).isActive = true
@@ -141,6 +169,44 @@ class AchievementDetailsViewController: BaseViewController {
         
     }
     
+    private func setupProperties(with challenge: Challenge) {
+        achievementTitleLabel.text = challenge.gameName
+        achievementDescriptionLabel.text = challenge.description
+        lockView.isHidden = challenge.isUnlocked ?? false
+        setChallengeImage(from: challenge)
+        
+        switch challenge.status {
+        case .locked:
+            achievementStatusImageView.image = UIImage.image(named: "ChallengeLockedImage")
+        case .inProgress:
+            achievementStatusImageView.image = UIImage.image(named: "ChallengeInProgressImage")
+        case .achieved:
+            achievementStatusImageView.image = UIImage.image(named: "ChallengeAchievedImage")
+        }
+        
+        achievementStatusLabel.text = challenge.statusDescription
+        
+    }
+    
+    func setChallengeImage(from model: Challenge) {
+        
+        var path = model.icon ?? "assets/images/bolt.png"
+        path = "/" + path
+        NetworkManager.shared().loadImage(path: path) { (myImage, error) in
+            if let errorModel = error {
+                print(errorModel.description)
+            }
+            else {
+            }
+            if let result = myImage {
+                DispatchQueue.main.async {
+                    self.achievementImageView.image = result
+                }
+            }
+        }
+    }
+
+    
     @objc private func actionOfBackButton() {
         navigationController?.popViewController(animated: true)
     }
@@ -149,7 +215,7 @@ class AchievementDetailsViewController: BaseViewController {
 
 
 
-class DemoView: UIView {
+class CurvedView: UIView {
     
 
     private var path: UIBezierPath!

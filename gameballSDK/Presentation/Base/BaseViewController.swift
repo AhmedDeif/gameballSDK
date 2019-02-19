@@ -9,9 +9,27 @@
 import UIKit
 
 public class BaseViewController: UIViewController {
+    
+    private var loadingView: UIView?
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    func startLoading(with loadingView: UIView) {
+        self.loadingView = loadingView
+        self.view.addSubview(loadingView)
+        loadingView.frame = view.bounds
+        
+        
+    }
+    
+    func stopLoading() {
+        self.loadingView?.removeFromSuperview()
+        self.loadingView = nil
+    }
+    
+    
 }
 
 extension BaseViewController: BaseCoordinatorDelegate {

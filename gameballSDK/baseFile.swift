@@ -7,7 +7,8 @@
 //
 
 import UIKit
-//import FirebaseCore
+import FirebaseCore
+//import Firebase
 
 public class baseFile: NSObject {
     
@@ -21,6 +22,32 @@ public class baseFile: NSObject {
         print("=======================")
         print("=======================")
 //        FirebaseApp.configure()
+        
+        
+        //
+        guard let URL = Bundle(for: self).url(forResource: "GoogleService-InfoGameball", withExtension: "plist") else {
+            print("I was not able to find file resource file")
+            return
+        }
+        
+        if let filePath = Bundle(for: self).path(forResource: "GoogleService-InfoGameball", ofType: "plist") {
+            if let firebaseOptions = FirebaseOptions(contentsOfFile: filePath) {
+                FirebaseApp.configure(name: "gameballSDK_FirebaseApp", options: firebaseOptions)
+            }
+            else {
+                print("couldnot create firebase options")
+            }
+        }
+        else {
+            print("Info plist not found")
+        }
+//        let fileManager = FileManager.default
+//        var path = fileManager.currentDirectoryPath
+//        path += "GoogleService-Info.plist"
+//        print("File Path: \(path)")
+//        let options = FirebaseOptions.init(contentsOfFile: "GoogleService-Info.plist")
+//        print(options)
+        
     }
     
     public static func testFunc() {

@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameballViewController" customModule="gameballSDK" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="zpH-7z-A5B" id="160-bx-iBh"/>
+                <outlet property="dismissButton" destination="HeY-Jn-w2I" id="c5y-gf-6qf"/>
                 <outlet property="dropdownView" destination="qhV-4y-oer" id="Vid-LQ-JaY"/>
                 <outlet property="profileHeaderView" destination="YCq-3a-WBp" id="848-4g-kad"/>
                 <outlet property="separaterView" destination="8NS-EZ-flS" id="CG6-ct-wFV"/>
@@ -24,22 +25,26 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HeY-Jn-w2I">
+                    <rect key="frame" x="17" y="32" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                </button>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCq-3a-WBp" customClass="ProfileHeaderView" customModule="gameballSDK">
-                    <rect key="frame" x="0.0" y="20" width="375" height="135"/>
+                    <rect key="frame" x="0.0" y="72" width="375" height="135"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="135" id="njX-20-vG7"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8NS-EZ-flS">
-                    <rect key="frame" x="0.0" y="155" width="375" height="2"/>
+                    <rect key="frame" x="0.0" y="207" width="375" height="2"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="UOh-Ts-dcT"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="zpH-7z-A5B">
-                    <rect key="frame" x="17" y="197" width="341" height="460"/>
+                    <rect key="frame" x="17" y="249" width="341" height="408"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="35" id="Mw9-PF-GYp">
                         <size key="itemSize" width="50" height="50"/>
@@ -49,7 +54,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhV-4y-oer" customClass="DropdownView" customModule="gameballSDK">
-                    <rect key="frame" x="17" y="162" width="341" height="30"/>
+                    <rect key="frame" x="17" y="214" width="341" height="30"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="tg9-sl-5tQ"/>
@@ -59,6 +64,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="zpH-7z-A5B" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="17" id="4uv-YY-O3Y"/>
+                <constraint firstItem="HeY-Jn-w2I" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="17" id="8GC-0s-puR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zpH-7z-A5B" secondAttribute="bottom" constant="10" id="D9Q-Mu-n8q"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YCq-3a-WBp" secondAttribute="trailing" id="MbU-2a-e40"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8NS-EZ-flS" secondAttribute="trailing" id="OfT-6D-v92"/>
@@ -69,8 +75,9 @@
                 <constraint firstItem="qhV-4y-oer" firstAttribute="top" secondItem="8NS-EZ-flS" secondAttribute="bottom" constant="5" id="eau-0M-Ni0"/>
                 <constraint firstItem="8NS-EZ-flS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jYE-ui-TbV"/>
                 <constraint firstItem="YCq-3a-WBp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="m1p-gX-Vnx"/>
+                <constraint firstItem="HeY-Jn-w2I" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="qYL-H5-CIt"/>
+                <constraint firstItem="YCq-3a-WBp" firstAttribute="top" secondItem="HeY-Jn-w2I" secondAttribute="bottom" constant="10" id="sBK-tP-hxv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zpH-7z-A5B" secondAttribute="trailing" constant="17" id="u5e-Nw-4R9"/>
-                <constraint firstItem="YCq-3a-WBp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="x46-DQ-27H"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="-396" y="-404.34782608695656"/>
