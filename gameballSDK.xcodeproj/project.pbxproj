@@ -23,6 +23,21 @@
 		4239CC78221C636E0075B06F /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4239CC69221C636E0075B06F /* ProfileHeaderView.swift */; };
 		4239CC79221C636E0075B06F /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4239CC6A221C636E0075B06F /* ProfileHeaderView.xib */; };
 		4239CC7C221C64D80075B06F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4239CC7B221C64D80075B06F /* Extensions.swift */; };
+		4239CC93221C6DCC0075B06F /* ChallengeLockedImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4239CC80221C6DCC0075B06F /* ChallengeLockedImage@3x.png */; };
+		4239CC94221C6DCC0075B06F /* ChallengeLockedImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4239CC81221C6DCC0075B06F /* ChallengeLockedImage.png */; };
+		4239CC95221C6DCC0075B06F /* ChallengeLockedImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4239CC82221C6DCC0075B06F /* ChallengeLockedImage@2x.png */; };
+		4239CC96221C6DCC0075B06F /* ChallengeInProgressImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4239CC84221C6DCC0075B06F /* ChallengeInProgressImage@2x.png */; };
+		4239CC97221C6DCC0075B06F /* ChallengeInProgressImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4239CC85221C6DCC0075B06F /* ChallengeInProgressImage@3x.png */; };
+		4239CC98221C6DCC0075B06F /* ChallengeInProgressImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4239CC86221C6DCC0075B06F /* ChallengeInProgressImage.png */; };
+		4239CC99221C6DCC0075B06F /* LockIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4239CC88221C6DCC0075B06F /* LockIcon@3x.png */; };
+		4239CC9A221C6DCC0075B06F /* LockIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4239CC89221C6DCC0075B06F /* LockIcon@2x.png */; };
+		4239CC9B221C6DCC0075B06F /* LockIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4239CC8A221C6DCC0075B06F /* LockIcon.png */; };
+		4239CC9C221C6DCC0075B06F /* ChallengeAchievedImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4239CC8C221C6DCC0075B06F /* ChallengeAchievedImage.png */; };
+		4239CC9D221C6DCC0075B06F /* ChallengeAchievedImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4239CC8D221C6DCC0075B06F /* ChallengeAchievedImage@2x.png */; };
+		4239CC9E221C6DCC0075B06F /* ChallengeAchievedImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4239CC8E221C6DCC0075B06F /* ChallengeAchievedImage@3x.png */; };
+		4239CC9F221C6DCC0075B06F /* LockIconLarge@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4239CC90221C6DCC0075B06F /* LockIconLarge@3x.png */; };
+		4239CCA0221C6DCC0075B06F /* LockIconLarge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4239CC91221C6DCC0075B06F /* LockIconLarge@2x.png */; };
+		4239CCA1221C6DCC0075B06F /* LockIconLarge.png in Resources */ = {isa = PBXBuildFile; fileRef = 4239CC92221C6DCC0075B06F /* LockIconLarge.png */; };
 		427E40FE2219DEED00937C9E /* GoogleService-InfoGameball.plist in Resources */ = {isa = PBXBuildFile; fileRef = 427E40FD2219DEED00937C9E /* GoogleService-InfoGameball.plist */; };
 		42862C86221728BB00A654D5 /* gameballSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 42862C84221728BB00A654D5 /* gameballSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42862CDD22172A8800A654D5 /* baseFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42862CB122172A8700A654D5 /* baseFile.swift */; };
@@ -72,6 +87,21 @@
 		4239CC69221C636E0075B06F /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		4239CC6A221C636E0075B06F /* ProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
 		4239CC7B221C64D80075B06F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4239CC80221C6DCC0075B06F /* ChallengeLockedImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ChallengeLockedImage@3x.png"; sourceTree = "<group>"; };
+		4239CC81221C6DCC0075B06F /* ChallengeLockedImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChallengeLockedImage.png; sourceTree = "<group>"; };
+		4239CC82221C6DCC0075B06F /* ChallengeLockedImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ChallengeLockedImage@2x.png"; sourceTree = "<group>"; };
+		4239CC84221C6DCC0075B06F /* ChallengeInProgressImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ChallengeInProgressImage@2x.png"; sourceTree = "<group>"; };
+		4239CC85221C6DCC0075B06F /* ChallengeInProgressImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ChallengeInProgressImage@3x.png"; sourceTree = "<group>"; };
+		4239CC86221C6DCC0075B06F /* ChallengeInProgressImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChallengeInProgressImage.png; sourceTree = "<group>"; };
+		4239CC88221C6DCC0075B06F /* LockIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LockIcon@3x.png"; sourceTree = "<group>"; };
+		4239CC89221C6DCC0075B06F /* LockIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LockIcon@2x.png"; sourceTree = "<group>"; };
+		4239CC8A221C6DCC0075B06F /* LockIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LockIcon.png; sourceTree = "<group>"; };
+		4239CC8C221C6DCC0075B06F /* ChallengeAchievedImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChallengeAchievedImage.png; sourceTree = "<group>"; };
+		4239CC8D221C6DCC0075B06F /* ChallengeAchievedImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ChallengeAchievedImage@2x.png"; sourceTree = "<group>"; };
+		4239CC8E221C6DCC0075B06F /* ChallengeAchievedImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ChallengeAchievedImage@3x.png"; sourceTree = "<group>"; };
+		4239CC90221C6DCC0075B06F /* LockIconLarge@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LockIconLarge@3x.png"; sourceTree = "<group>"; };
+		4239CC91221C6DCC0075B06F /* LockIconLarge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LockIconLarge@2x.png"; sourceTree = "<group>"; };
+		4239CC92221C6DCC0075B06F /* LockIconLarge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LockIconLarge.png; sourceTree = "<group>"; };
 		427E40FD2219DEED00937C9E /* GoogleService-InfoGameball.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-InfoGameball.plist"; sourceTree = "<group>"; };
 		42862C81221728BB00A654D5 /* gameballSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = gameballSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42862C84221728BB00A654D5 /* gameballSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gameballSDK.h; sourceTree = "<group>"; };
@@ -216,6 +246,76 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		4239CC7D221C6DCC0075B06F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4239CC7E221C6DCC0075B06F /* Images */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		4239CC7E221C6DCC0075B06F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4239CC7F221C6DCC0075B06F /* ChallengeLockedImage */,
+				4239CC83221C6DCC0075B06F /* ChallengeInProgressImage */,
+				4239CC87221C6DCC0075B06F /* LockIcon */,
+				4239CC8B221C6DCC0075B06F /* ChallengeAchievedImage */,
+				4239CC8F221C6DCC0075B06F /* LockIconLarge */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		4239CC7F221C6DCC0075B06F /* ChallengeLockedImage */ = {
+			isa = PBXGroup;
+			children = (
+				4239CC80221C6DCC0075B06F /* ChallengeLockedImage@3x.png */,
+				4239CC81221C6DCC0075B06F /* ChallengeLockedImage.png */,
+				4239CC82221C6DCC0075B06F /* ChallengeLockedImage@2x.png */,
+			);
+			path = ChallengeLockedImage;
+			sourceTree = "<group>";
+		};
+		4239CC83221C6DCC0075B06F /* ChallengeInProgressImage */ = {
+			isa = PBXGroup;
+			children = (
+				4239CC84221C6DCC0075B06F /* ChallengeInProgressImage@2x.png */,
+				4239CC85221C6DCC0075B06F /* ChallengeInProgressImage@3x.png */,
+				4239CC86221C6DCC0075B06F /* ChallengeInProgressImage.png */,
+			);
+			path = ChallengeInProgressImage;
+			sourceTree = "<group>";
+		};
+		4239CC87221C6DCC0075B06F /* LockIcon */ = {
+			isa = PBXGroup;
+			children = (
+				4239CC88221C6DCC0075B06F /* LockIcon@3x.png */,
+				4239CC89221C6DCC0075B06F /* LockIcon@2x.png */,
+				4239CC8A221C6DCC0075B06F /* LockIcon.png */,
+			);
+			path = LockIcon;
+			sourceTree = "<group>";
+		};
+		4239CC8B221C6DCC0075B06F /* ChallengeAchievedImage */ = {
+			isa = PBXGroup;
+			children = (
+				4239CC8C221C6DCC0075B06F /* ChallengeAchievedImage.png */,
+				4239CC8D221C6DCC0075B06F /* ChallengeAchievedImage@2x.png */,
+				4239CC8E221C6DCC0075B06F /* ChallengeAchievedImage@3x.png */,
+			);
+			path = ChallengeAchievedImage;
+			sourceTree = "<group>";
+		};
+		4239CC8F221C6DCC0075B06F /* LockIconLarge */ = {
+			isa = PBXGroup;
+			children = (
+				4239CC90221C6DCC0075B06F /* LockIconLarge@3x.png */,
+				4239CC91221C6DCC0075B06F /* LockIconLarge@2x.png */,
+				4239CC92221C6DCC0075B06F /* LockIconLarge.png */,
+			);
+			path = LockIconLarge;
+			sourceTree = "<group>";
+		};
 		42862C77221728BB00A654D5 = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +340,7 @@
 				427E40FD2219DEED00937C9E /* GoogleService-InfoGameball.plist */,
 				42862CB122172A8700A654D5 /* baseFile.swift */,
 				42862CB222172A8700A654D5 /* Constants.swift */,
+				4239CC7D221C6DCC0075B06F /* Assets */,
 				4239CC7A221C64D80075B06F /* Extensions */,
 				42862CB322172A8700A654D5 /* Models */,
 				42862CC422172A8800A654D5 /* Network Layer */,
@@ -403,11 +504,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4239CC95221C6DCC0075B06F /* ChallengeLockedImage@2x.png in Resources */,
+				4239CC9A221C6DCC0075B06F /* LockIcon@2x.png in Resources */,
+				4239CC98221C6DCC0075B06F /* ChallengeInProgressImage.png in Resources */,
 				4239CC6B221C636E0075B06F /* LeaderboardViewController.xib in Resources */,
+				4239CCA0221C6DCC0075B06F /* LockIconLarge@2x.png in Resources */,
+				4239CC94221C6DCC0075B06F /* ChallengeLockedImage.png in Resources */,
 				427E40FE2219DEED00937C9E /* GoogleService-InfoGameball.plist in Resources */,
 				42862CEC22172A8800A654D5 /* firstView.xib in Resources */,
+				4239CC97221C6DCC0075B06F /* ChallengeInProgressImage@3x.png in Resources */,
 				4239CC76221C636E0075B06F /* GameballViewController.xib in Resources */,
+				4239CC9D221C6DCC0075B06F /* ChallengeAchievedImage@2x.png in Resources */,
+				4239CC9B221C6DCC0075B06F /* LockIcon.png in Resources */,
 				4239CC79221C636E0075B06F /* ProfileHeaderView.xib in Resources */,
+				4239CC9C221C6DCC0075B06F /* ChallengeAchievedImage.png in Resources */,
+				4239CC93221C6DCC0075B06F /* ChallengeLockedImage@3x.png in Resources */,
+				4239CC96221C6DCC0075B06F /* ChallengeInProgressImage@2x.png in Resources */,
+				4239CC9E221C6DCC0075B06F /* ChallengeAchievedImage@3x.png in Resources */,
+				4239CCA1221C6DCC0075B06F /* LockIconLarge.png in Resources */,
+				4239CC99221C6DCC0075B06F /* LockIcon@3x.png in Resources */,
+				4239CC9F221C6DCC0075B06F /* LockIconLarge@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
